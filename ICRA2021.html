@@ -25,8 +25,7 @@ try {
 <a href="MotionPlanning.html"><p style="font-size: 20px; line-height:0.1em;">Motion planning</p></a>
 <div class="menu-item"><a href="DSCC2019.html" class="current">DSCC 2019</a></div>
 <div class="menu-item"><a href="ACC2020.html" class="current">ACC 2020</a></div>
-	<div class="menu-item"><a href="ACC2021.html" class="current">ACC 2021</a></div>
-<div class="menu-item"><a href="ICRA2021_PSGCFS.html" class="current">ICRA 2021 (PSGCFS)</a></div>
+<div class="menu-item"><a href="ACC2021.html" class="current">ACC 2021</a></div>
 </td>
 <td id="layout-content">
 <div id="toptitle">
@@ -35,10 +34,11 @@ try {
 <b>Jessica Leu, Liting Sun, and Masayoshi Tomizuka</b></div>
 </div>
 <p>Welcome!
-This website supplements our ICRA 2021 submission, in which we presents presented a contact, estimation and planning framework that allows light-weighted mobile manipulators to actively collect information through physical contact and generate more feasible trajectory plans by explicitly integrating such information into motion planners so that the robot can handle dynamic changes and possible failures caused by environment uncertainties.</p>
-<p>Mobile manipulators, benefiting from both mobility from the platform and agility from the arm, have many applications that involve physical contact with the environment such as picking up objects, placing objects, and opening doors. The uncertainties involved in these operations, however, can influence the robot dynamics and correspondingly its optimal operations. For instance, pushing doors with different stiffness might require the mobile manipulator to adjust itself to different poses. Without actively explore and estimate such uncertainties, traditional motion planning algorithms might generate a dynamically infeasible trajectory and lead to failure. To tackle this problem, we proposed a motion planning framework that handles contact-related uncertainties via active contacting, estimating, and planning (CEP). The CEP framework contains a probabilistic formulation to capture the characteristics of the contact-related uncertainties, a Bayesian update step to estimate the parameters that describe the uncertainties, and an optimization-based motion planner that integrates the estimated uncertainties. The framework is implemented on a TurtleBot3 with the OpenMANIPULATOR (TB3O) platform. We verify the performance through both simulations and experiments. The results show that the framework helps the robot plan more successfully in the presence of contact-related uncertainties.</p>
+This website supplements our ICRA 2021 submission, in which we formulate the uncertainty-exploring motion planning as a partially observable Markov decision process (POMDP) with an additional reward term to encourage uncertainty exploration.</p>
+	
+<p>Mobile manipulators often need to perform tasks under uncertainties. For instance, they need to navigate around moving objects and contact or manipulate unknown objects such as opening a door to enter a room. Such uncertainties may influence the robot dynamics and correspondingly its optimal operations. Hence, to successfully perform given tasks, mobile manipulators should be aware of such influence and actively explore possible uncertainties in the environment to integrate them in the motion planning module. For instance, a mobile manipulator trying to push an object in front of it (either a push-able door or a box) should reason about the possible dynamics of the object so that it can find the optimal strategy to handle it (either push forward or detour). To enable such capabilities, we formulate the uncertainty-exploring motion planning as a partially observable Markov decision process (POMDP) with an additional reward term to encourage uncertainty exploration. We also present a hybrid optimization algorithm, namely, the Hamiltonian Monte Carlo sampling with convex feasible set algorithm (HMCCFS), to solve the POMDP efficiently. The performance of the proposed framework and algorithm is verified via both simulations and experiments. The results show that the framework helps the robot to perform various tasks more successfully in the presence of different environment uncertainties.</p>
 <p><br /></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DwOCdtun7b4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ntx1Obcvha0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><br /></p>
 <div id="footer">
 <div id="footer-text">
